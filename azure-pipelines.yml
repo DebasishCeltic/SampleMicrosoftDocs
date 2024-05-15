@@ -4,10 +4,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- main
+  branches:
+    include:
+      - main
 
 pool:
-  vmImage: testing-pool
+  vmImage: ubuntu-latest
 
 steps:
 - task: Maven@3
